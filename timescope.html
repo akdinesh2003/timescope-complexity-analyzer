@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeScope – Advanced Complexity Estimator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Advanced Background Elements -->
+  <div class="background-overlay"></div>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="particles-container"></div>
+  <div class="floating-elements"></div>
+  <div class="energy-field"></div>
+  
+  <!-- 3D Perspective Container -->
+  <div class="perspective-container">
+    <div class="container">
+      <!-- Enhanced Header with 3D Effects -->
+      <header class="header">
+        <div class="logo">
+          <div class="logo-3d">
+            <i class="fas fa-clock logo-icon"></i>
+            <div class="logo-glow"></div>
+          </div>
+          <h1 class="title-3d">TimeScope</h1>
+          <span class="subtitle">Advanced Complexity Analyzer</span>
+          <div class="tech-badges">
+            <span class="badge">AI-Powered</span>
+            <span class="badge">Real-time</span>
+            <span class="badge">Advanced</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content with Enhanced Layout -->
+      <main class="main-content">
+        <!-- Control Panel with Advanced Effects -->
+        <div class="control-panel">
+          <div class="panel-header">
+            <i class="fas fa-cogs"></i>
+            <span>Algorithm Input</span>
+            <div class="status-indicator">
+              <div class="status-dot"></div>
+              <span>Ready</span>
+            </div>
+          </div>
+
+          <div class="language-selector">
+            <label for="langSelector">
+              <i class="fas fa-code"></i>
+              <strong>Programming Language</strong>
+            </label>
+            <select id="langSelector" class="modern-select">
+              <option value="auto">🔍 Auto Detect</option>
+              <option value="python">🐍 Python</option>
+              <option value="javascript">⚡ JavaScript</option>
+              <option value="cpp">⚙️ C++</option>
+              <option value="java">☕ Java</option>
+              <option value="csharp">💎 C#</option>
+              <option value="rust">🦀 Rust</option>
+              <option value="go">🐹 Go</option>
+            </select>
+          </div>
+
+          <div class="code-input-section">
+            <div class="input-header">
+              <i class="fas fa-terminal"></i>
+              <span>Code Input</span>
+              <div class="input-stats">
+                <span class="char-count">0 chars</span>
+                <span class="line-count">0 lines</span>
+              </div>
+            </div>
+            <div class="textarea-container">
+              <textarea 
+                id="codeInput" 
+                class="code-textarea" 
+                placeholder="Paste your algorithm here for complexity analysis...&#10;&#10;Example:&#10;for i in range(n):&#10;    for j in range(n):&#10;        print(i, j)"
+              ></textarea>
+              <div class="textarea-overlay"></div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button onclick="analyzeCode()" class="btn btn-primary btn-3d">
+              <i class="fas fa-rocket"></i>
+              <span>Analyze Complexity</span>
+              <div class="btn-particles"></div>
+            </button>
+            <button onclick="clearCode()" class="btn btn-secondary btn-3d">
+              <i class="fas fa-trash"></i>
+              <span>Clear Code</span>
+            </button>
+            <button onclick="showExamples()" class="btn btn-info btn-3d">
+              <i class="fas fa-lightbulb"></i>
+              <span>Examples</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Enhanced Results Section -->
+        <div class="results-section">
+          <div class="results-header">
+            <i class="fas fa-chart-line"></i>
+            <span>Analysis Results</span>
+            <div class="confidence-meter">
+              <div class="confidence-bar"></div>
+              <span class="confidence-text">High Confidence</span>
+            </div>
+          </div>
+          
+          <div id="result" class="result-display">
+            <div class="result-placeholder">
+              <i class="fas fa-microchip"></i>
+              <span>Ready to analyze your code</span>
+            </div>
+          </div>
+          
+          <!-- Performance Metrics -->
+          <div class="metrics-panel">
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <div class="metric-content">
+                <span class="metric-label">Performance</span>
+                <span class="metric-value" id="performanceMetric">-</span>
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-memory"></i>
+              </div>
+              <div class="metric-content">
+                <span class="metric-label">Memory</span>
+                <span class="metric-value" id="memoryMetric">-</span>
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div class="metric-content">
+                <span class="metric-label">Complexity</span>
+                <span class="metric-value" id="complexityMetric">-</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="history-section">
+            <h2>
+              <i class="fas fa-history"></i>
+              Analysis History
+              <button onclick="clearHistory()" class="clear-history-btn">
+                <i class="fas fa-broom"></i>
+              </button>
+            </h2>
+            <div class="history-container">
+              <ul id="historyList" class="history-list"></ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Enhanced Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>TimeScope v3.0</h3>
+            <p>Advanced Algorithm Complexity Analyzer</p>
+          </div>
+          <div class="footer-section">
+            <div class="tech-stack">
+              <span class="tech-item">AI Analysis</span>
+              <span class="tech-item">Real-time Processing</span>
+              <span class="tech-item">Multi-language Support</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Powered by Advanced Algorithm Analysis • TimeScope v3.0</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal for Examples -->
+  <div id="examplesModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-lightbulb"></i> Algorithm Examples</h2>
+        <button class="modal-close" onclick="closeExamples()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="example-tabs">
+          <button class="tab-btn active" onclick="showExampleTab('linear')">O(n) Linear</button>
+          <button class="tab-btn" onclick="showExampleTab('quadratic')">O(n²) Quadratic</button>
+          <button class="tab-btn" onclick="showExampleTab('exponential')">O(2ⁿ) Exponential</button>
+        </div>
+        <div id="exampleContent" class="example-content">
+          <!-- Example content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-content">
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
+      <div class="loading-text">
+        <span>Analyzing Algorithm</span>
+        <div class="loading-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="timescope.js"></script>
+</body>
+</html>
